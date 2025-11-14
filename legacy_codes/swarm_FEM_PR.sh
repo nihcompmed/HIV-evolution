@@ -1,0 +1,11 @@
+#python3 get_FEM_PR.py None
+#python3 get_FEM_PR.py IDV
+python3 get_FEM_PR.py SQV
+python3 get_FEM_PR.py NFV
+python3 get_FEM_PR.py RTV
+python3 get_FEM_PR.py IDV,RTV,SQV
+python3 get_FEM_PR.py RTV,SQV
+python3 get_FEM_PR.py IDV,NFV,RTV,SQV
+python3 get_FEM_PR.py IDV,NFV
+python3 get_FEM_PR.py LPV
+python3 get_FEM_PR.py ATV,RTV

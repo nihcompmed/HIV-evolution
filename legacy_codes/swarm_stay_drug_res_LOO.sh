@@ -1,0 +1,2 @@
+python3 get_trajs_stay_drug_res_LOO.py 279
+python3 get_trajs_stay_drug_res_LOO.py 291
