@@ -7,7 +7,7 @@ from joblib import Parallel, delayed
 
 
 
-fname = 'PI_treatments_dict.p'
+fname = '../preprocess_data/PI_treatments_dict.p'
 dbfile = open(fname, 'rb')
 PI_treatments = pickle.load(dbfile)
 dbfile.close()
@@ -70,7 +70,7 @@ for treatment in PI_treatments:
 
         info['logistic_regression'][pos] = model
 
-    fname = f'treatment{treatment}_PR_evol_onehot_logistic.p'
+    fname = f'models/treatment{treatment}_PR_evol_onehot_logistic.p'
     dbfile = open(fname, 'wb')
     pickle.dump(info, dbfile)
     dbfile.close()
