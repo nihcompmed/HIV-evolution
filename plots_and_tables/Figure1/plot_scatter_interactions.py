@@ -116,7 +116,7 @@ def plot_scatter_per_treatment(dist_matrix_file, model_dir, n_residues=99, n_top
             color='blue', 
             alpha=0.3, 
             label=f'Other Interactions',
-            s=10 # Smaller size for the background
+            s=75 # Smaller size for the background
         )
         
         # Plot the "top N" points
