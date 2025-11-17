@@ -84,7 +84,7 @@ for drug in do_drugs:
     # --- New Legend Logic ---
     mono_therapy_labeled = False
     multi_therapy_labeled = False
-    ATV_RTV = False
+    #ATV_RTV = False
     
     # Pre-calculate the denominator (baseline)
     none_data = treatment_data['None'] + eps
@@ -101,23 +101,24 @@ for drug in do_drugs:
         elif n_PIs == 1:
             color = 'blue'
             if not mono_therapy_labeled:
-                label_to_use = 'Mono-PI treatment regimen'
+                label_to_use = 'Mono-PI treat. regimen'
                 mono_therapy_labeled = True
         else: # n_PIs > 1
             color = 'red'
-            if not multi_therapy_labeled and treatment != 'ATV,RTV':
-                label_to_use = 'Multi-PI treatment regimen'
+            #if not multi_therapy_labeled and treatment != 'ATV,RTV':
+            if not multi_therapy_labeled:
+                label_to_use = 'Multi-PI treat. regimen'
                 multi_therapy_labeled = True
 
 
-        if treatment == 'ATV,RTV':
-            alpha=1.0
-            lw=2
-            ATV_RTV = True
-            label_to_use = 'ATV,RTV treatment regimen'
-        else:
-            alpha=0.8
-            lw=1
+        #if treatment == 'ATV,RTV':
+        #    alpha=1.0
+        #    lw=2
+        #    ATV_RTV = True
+        #    label_to_use = 'ATV,RTV treat. regimen'
+        #else:
+        #    alpha=0.8
+        #    lw=1
 
         
         # Calculate the ratio
@@ -127,11 +128,11 @@ for drug in do_drugs:
                  label=label_to_use, 
                  color=color,
                  linestyle=linestyle,
-                 alpha=alpha,
-                 linewidth=lw)
+                 alpha=1.0,
+                 linewidth=2)
 
     plt.yscale('log')
-    plt.title(f'{drug} resistant genotypes', fontsize=24)
+    plt.title(f'{drug} resistant genotypes', fontsize=28)
     plt.xlabel(r'$\tau$', fontsize=30)
 
     # --- Y-Label Correction ---
@@ -143,7 +144,7 @@ for drug in do_drugs:
     plt.gca().tick_params(axis='y', which='major', labelsize=22)
     
     # --- Add Legend ---
-    plt.legend(fontsize=16)
+    plt.legend(fontsize=20)
     
     plt.tight_layout()
     plt.savefig(f'fig4b_drug{drug}.jpg', dpi=300, bbox_inches='tight')

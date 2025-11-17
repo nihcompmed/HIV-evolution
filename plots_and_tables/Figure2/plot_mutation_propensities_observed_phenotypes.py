@@ -71,10 +71,10 @@ bp = ax.boxplot(data_for_plot, patch_artist=True,
                 capprops={'linewidth': 1.0, 'color': 'black'},
                 boxprops={'facecolor': 'lightblue', 'edgecolor': 'black', 'linewidth': 1.0})
 
-ax.set_xlabel('Treatment regimen', fontsize=22)
-ax.set_ylabel('Mutation propensity', fontsize=24)
+#ax.set_xlabel('Treatment regimen', fontsize=22)
+ax.set_ylabel('Mutation propensity', fontsize=28)
 ax.set_title('Distribution of mutation propensity for observed genotypes by treatment',
-              fontsize=14, fontweight='bold')
+              fontsize=24)
 # MODIFIED to use median-sorted list
 ax.set_xticks(np.arange(1, len(sorted_treatments_by_median) + 1))
 
@@ -95,6 +95,9 @@ for name in sorted_treatments_by_median:
 # MODIFIED to use new formatted labels and remove rotation
 ax.set_xticklabels(formatted_labels, ha='center', fontsize=18)
 # --- END MODIFICATION ---
+
+ax.tick_params(axis='y', labelsize=18)
+
 
 ax.grid(True, alpha=0.3, axis='y')
 
@@ -136,7 +139,7 @@ for name in treatments_sorted: # Note: uses the median-sorted list
     else:
         formatted_bar_labels.append(name)
         
-ax3.set_xticklabels(formatted_bar_labels, ha='center', fontsize=16) # Removed rotation
+ax3.set_xticklabels(formatted_bar_labels, ha='center', fontsize=20) # Removed rotation
 # --- END MODIFICATION ---
 
 ax3.grid(True, alpha=0.3, axis='y')

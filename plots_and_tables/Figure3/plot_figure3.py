@@ -70,6 +70,7 @@ cbar.set_label('#genotypes', fontsize=14)
 axs[0].set_xlabel(f'1/reachability', fontsize=18)
 axs[0].set_ylabel(f'Mutation propensity', fontsize=18)
 
+axs[0].tick_params(axis='both', which='major', labelsize=16)
 
 normalization_factor_prob_to_reach = 10
 normalization_mutation_propensity = 20
@@ -100,7 +101,7 @@ axs[1].set_ylabel(f'Mutation propensity (normalized)', fontsize=18)
 #axs[col].set_title(f'Pareto optimality threshold {thresh}\ncumulative counts below threshold {count_below_thresh}', fontsize=20)
 
 # Increase tick label font sizes
-axs[1].tick_params(axis='both', which='major', labelsize=12)
+axs[1].tick_params(axis='both', which='major', labelsize=16)
 
 
 # Plot cumulative counts
@@ -116,7 +117,7 @@ axs[2].plot(values_sorted, cumulative_counts, linewidth=2)
 axs[2].set_yscale('log')
 axs[2].set_xlabel(r'$\tau$', fontsize=22)
 axs[2].set_ylabel(r'$\phi(\tau)$', fontsize=22)
-axs[2].tick_params(axis='both', which='major', labelsize=12)
+axs[2].tick_params(axis='both', which='major', labelsize=16)
 
 x_scatter = x
 y_scatter = y
@@ -175,6 +176,5 @@ plt.suptitle(f'{example_drug_res} resistant genotypes in treatment regimen {exam
 plt.tight_layout()
 
 plt.savefig(f'fig3.jpg', dpi=300, bbox_inches='tight')
-plt.show()
 
 

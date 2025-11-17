@@ -99,11 +99,11 @@ ax2.boxplot(data_for_plot, patch_artist=True,
 ax2.axhline(0, color='red', linestyle='--', alpha=0.7, label='Baseline (No treatment)')
 
 # Formatting with fontsize=16
-ax2.set_xlabel('Treatment regimen', fontsize=22)
+#ax2.set_xlabel('Treatment regimen', fontsize=22)
 ax2.set_ylabel(r'Change in mutation propensity: $\Delta m_F$',
                fontsize=24)
-ax2.set_title(f'Mutation propensity change of drug-naive genotypes\nwrt to no treatment',
-              fontsize=16, fontweight='bold')
+ax2.set_title(f'Mutation propensity change of drug-naive genotypes wrt to no treatment',
+              fontsize=24)
 ax2.set_xticks(positions_sorted)
 
 
@@ -124,9 +124,9 @@ for name in treatments_sorted: # Use the existing sorted list
 ax2.set_xticklabels(formatted_labels, rotation=0, ha='center', fontsize=18)
 # --- END MODIFICATION ---
 
-ax2.tick_params(axis='y', labelsize=16)
+ax2.tick_params(axis='y', labelsize=18)
 ax2.grid(True, alpha=0.3, axis='y')
-ax2.legend(fontsize=16)
+ax2.legend(fontsize=20)
 
 plt.tight_layout()
 plt.savefig('mutation_propensity_difference_sorted.jpg', dpi=300, bbox_inches='tight')

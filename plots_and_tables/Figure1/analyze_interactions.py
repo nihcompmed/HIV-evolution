@@ -207,7 +207,7 @@ def analyze_interactions(dist_matrix_file, model_dir, n_residues=99):
     )
     
     # Increase font sizes for readability
-    ax.set_title("Spatial Distance Distribution of Top 1% vs. Remaining 99% Interactions", fontsize=22, weight='bold')
+    #ax.set_title("Spatial Distance Distribution of Top 1% vs. Remaining 99% Interactions", fontsize=28)
     ax.set_xlabel(None) # MODIFICATION: Remove x-axis label
     ax.set_ylabel("Cα-Cα Distance (Å)", fontsize=36) # Increased Y label font
     
@@ -233,7 +233,7 @@ def analyze_interactions(dist_matrix_file, model_dir, n_residues=99):
     ax.tick_params(axis='y', which='major', labelsize=24)
     
     # Increase legend size and set location
-    ax.legend(title="Interaction Group", fontsize=26, title_fontsize=20, loc='upper right', ncol=2) # MODIFICATION: Set location
+    ax.legend(title="Interaction Group", fontsize=26, title_fontsize=26, loc='upper right', ncol=2) # MODIFICATION: Set location
     
     # --- MODIFICATION: Add stars *and brackets* above the plots ---
     

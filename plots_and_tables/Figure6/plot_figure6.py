@@ -181,7 +181,7 @@ for col_idx, drug in enumerate(do_drugs):
     
     # --- Set Grid-Specific Labels ---
     
-    ax.set_title(f'Resist {drug}', fontsize=36)
+    ax.set_title(f'Resist {drug}', fontsize=24)
     ax.set_ylabel(r'Fractional change in $\phi(\tau)$'+'\nwrt no LOO', fontsize=24)
     ax.set_xlabel(r'$\tau$', fontsize=30)
         
@@ -314,7 +314,7 @@ for col_idx, drug in enumerate(do_drugs):
     
     # --- Set Grid-Specific Labels ---
     
-    ax.set_title(f'Resist {drug}', fontsize=36)
+    ax.set_title(f'Resist {drug}', fontsize=24)
 
     ax.set_ylabel(r'Fractional change in $\phi(\tau)$'+'\nwrt no LOO', fontsize=24)
     ax.set_xlabel(r'$\tau$', fontsize=30)
