@@ -27,7 +27,7 @@ n_steps = 1000
 # Load drug logistic regression models
 
 # Drug resistance
-fname = 'PI_drug_res_dict.p'
+fname = '../preprocess_data/PI_drug_res_dict.p'
 dbfile = open(fname, 'rb')
 PR_drug_res = pickle.load(dbfile)
 dbfile.close()
@@ -36,12 +36,12 @@ drug_logistic_regression = dict()
 
 for drug in PR_drug_res:
 
-    fname = f'treatment{treatment}_drugres{drug}_onehot_logistic.p'
+    fname = f'../train_models/models/treatment{treatment}_drugres{drug}_onehot_logistic.p'
     dbfile = open(fname, 'rb')
     drug_logistic_regression[drug] = pickle.load(dbfile)
     dbfile.close()
 
-fname = f'treatment{treatment}_PR_evol_onehot_logistic.p'
+fname = f'../train_models/models/treatment{treatment}_PR_evol_onehot_logistic.p'
 dbfile = open(fname, 'rb')
 info = pickle.load(dbfile)
 dbfile.close()

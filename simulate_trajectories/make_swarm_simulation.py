@@ -46,7 +46,7 @@ def check_and_generate_command(params):
 if __name__ == "__main__":
     betas = [0.4, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1.0]
 
-    fname = 'PI_treatments_dict.p'
+    fname = '../preprocess_data/PI_treatments_dict.p'
     with open(fname, 'rb') as dbfile:
         PI_treatments = pickle.load(dbfile)
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     all_params = []
     print("Generating and preparing all parameter combinations...")
     for treatment in PI_treatments:
-        fname = f'treatment{treatment}_PR_evol_onehot_logistic.p'
+        fname = f'../train_models/models/treatment{treatment}_PR_evol_onehot_logistic.p'
         with open(fname, 'rb') as dbfile:
             info = pickle.load(dbfile)
         
