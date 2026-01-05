@@ -5,12 +5,12 @@ from sklearn.linear_model import LogisticRegression
 
 
 
-fname = 'PI_treatments_dict.p'
+fname = '../preprocess_data/PI_treatments_dict.p'
 dbfile = open(fname, 'rb')
 PI_treatments = pickle.load(dbfile)
 dbfile.close()
 
-fname = 'PI_drug_res_dict.p'
+fname = '../preprocess_data/PI_drug_res_dict.p'
 dbfile = open(fname, 'rb')
 PR_drug_res = pickle.load(dbfile)
 dbfile.close()
@@ -48,7 +48,7 @@ for drug in PR_drug_res:
         info['onehot_encoder'] = trained_encoder
         info['logistic_regression'] = model
 
-        fname = f'treatment{treatment}_drugres{drug}_onehot_logistic.p'
+        fname = f'models/treatment{treatment}_drugres{drug}_onehot_logistic.p'
         dbfile = open(fname, 'wb')
         pickle.dump(info, dbfile)
         dbfile.close()
