@@ -18,6 +18,7 @@ for treatment in PI_treatments:
 
     seqs = PI_treatments[treatment]
 
+
     encoder = OneHotEncoder()
 
     trained_encoder = encoder.fit(seqs)
@@ -29,6 +30,9 @@ for treatment in PI_treatments:
 
     onehot_seqs = np.array(trained_encoder.transform(seqs).todense())
 
+    print(treatment, len(seqs), onehot_seqs.shape)
+
+    continue
     lenns = []
 
     for cat in trained_encoder.categories_:
